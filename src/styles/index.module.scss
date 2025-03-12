@@ -20,3 +20,28 @@
     }
   }
 }
+
+.accolades {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+
+  .achievement {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+
+    img {
+      height: 100%;
+      width: 50%;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
