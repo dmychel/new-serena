@@ -26,12 +26,24 @@ export default function Carousel() {
 
   return (
     <div className={styles.carousel}>
+      <div className={styles.carousel_text}>
+        <h1>New Serena Bar & Lounge</h1>
+      </div>
       <div className={styles.img_container}>
         {<img src={image.src} alt={image.src} />}
       </div>
-      <button style={{ position: "absolute" }} onClick={() => updateCarousel()}>
-        Press Me
-      </button>
+      <div
+        style={{
+          position: "absolute",
+          height: "100%",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <button onClick={() => updateCarousel()}>Press Me</button>
+      </div>
     </div>
   );
 }
