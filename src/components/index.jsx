@@ -5,6 +5,10 @@ export default function Index() {
     <div className={styles.index}>
       {/* carousel */}
       <div className={styles.carousel}>
+        {/* carousel center text */}
+        <div className={styles.carousel_text}>
+          <h1>New Serena Bar & Lounge</h1>
+        </div>
         <div className={styles.img_container}>
           <img src="https://placehold.co/600x400" alt="placeholder" />
         </div>
