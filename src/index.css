@@ -5,6 +5,7 @@
 
 .app {
   display: block;
+  user-select: none;
 }
 
 header {
