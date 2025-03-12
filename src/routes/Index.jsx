@@ -1,22 +1,10 @@
+import Carousel from "../components/Carousel";
 import styles from "/src/styles/index.module.scss";
 
 export default function Index() {
   return (
     <div className={styles.index}>
-      {/* carousel */}
-      <div className={styles.carousel}>
-        {/* carousel center text */}
-        <div className={styles.carousel_text}>
-          <h1>New Serena Bar & Lounge</h1>
-        </div>
-        <div className={styles.img_container}>
-          <img src="https://placehold.co/600x400" alt="placeholder" />
-        </div>
-        <div className={styles.img_container}>
-          <img src="https://placehold.co/600x400" alt="placeholder" />
-        </div>
-      </div>
-
+      <Carousel />
       <div className={styles.accolades}>
         <div className={styles.achievement}>
           <img src="/assets/images/buzzfeed.avif" alt="Buzzfeed" />
