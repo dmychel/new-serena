@@ -1,25 +1,37 @@
+import { useState } from "react";
 import styles from "/src/styles/index.module.scss";
 
 export default function Carousel() {
   const arr = [
     {
-      src: "https://placehold.co/600x400",
-      alt: "Placeholder Img",
+      src: "/assets/images/inside.webp",
+      alt: "Inside",
     },
     {
-      src: "https://placehold.co/600x400",
-      alt: "Placeholder Img",
+      src: "/assets/images/inside2.png",
+      alt: "Inside 2",
     },
   ];
+
+  const [index, setIndex] = useState(0);
+  const [image, setImage] = useState(arr[index]);
+
+  function updateCarousel() {
+    if (index === arr.length - 1) {
+      return setIndex(0), setImage(arr[index]);
+    } else {
+      return setIndex(index + 1), setImage(arr[index]);
+    }
+  }
+
   return (
     <div className={styles.carousel}>
-      {arr.map((img, index) => {
-        return (
-          <div className={styles.img_container} key={index}>
-            <img src={img.src} alt={img.alt} />
-          </div>
-        );
-      })}
+      <div className={styles.img_container}>
+        {<img src={image.src} alt={image.src} />}
+      </div>
+      <button style={{ position: "absolute" }} onClick={() => updateCarousel()}>
+        Press Me
+      </button>
     </div>
   );
 }
