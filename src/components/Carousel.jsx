@@ -11,16 +11,28 @@ export default function Carousel() {
       src: "/assets/images/inside2.png",
       alt: "Inside 2",
     },
+    {
+      src: "/assets/images/front-entrance-night.webp",
+      alt: "Front Entrance",
+    },
   ];
 
   const [index, setIndex] = useState(0);
   const [image, setImage] = useState(arr[index]);
 
-  function updateCarousel() {
-    if (index === arr.length - 1) {
-      return setIndex(0), setImage(arr[index]);
+  function updateCarousel(value) {
+    if (value > 0) {
+      if (index === arr.length - 1 || index === -1) {
+        return setIndex(0), setImage(arr[index]);
+      } else {
+        return setIndex(index + 1), setImage(arr[index]), console.log(index);
+      }
     } else {
-      return setIndex(index + 1), setImage(arr[index]);
+      if (index === -1) {
+        return setIndex(2);
+      } else {
+        return setIndex(index - 1), setImage(arr[index]);
+      }
     }
   }
 
@@ -38,11 +50,12 @@ export default function Carousel() {
           height: "100%",
           width: "100%",
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "space-between",
           alignItems: "center",
         }}
       >
-        <button onClick={() => updateCarousel()}>Press Me</button>
+        <button onClick={() => updateCarousel(-1)}>Press Me</button>\
+        <button onClick={() => updateCarousel(1)}>Press Me</button>
       </div>
     </div>
   );
